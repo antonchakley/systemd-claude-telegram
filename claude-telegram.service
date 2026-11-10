@@ -1,0 +1,13 @@
+[Unit]
+Description=Claude Code Telegram session
+After=network-online.target
+
+[Service]
+Type=forking
+WorkingDirectory=%h/telegram
+Environment="PATH=%h/.local/bin:%h/.bun/bin:/usr/local/bin:/usr/bin:/bin"
+ExecStart=tmux -L claude new-session -d -s claude-tg 'claude --channels plugin:telegram@claude-plugins-official'
+ExecStop=tmux -L claude kill-session -t claude-tg
+
+[Install]
+WantedBy=default.target

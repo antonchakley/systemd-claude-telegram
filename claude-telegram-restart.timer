@@ -1,0 +1,8 @@
+[Unit]
+Description=Nightly restart of Claude Code Telegram session
+
+[Timer]
+OnCalendar=*-*-* 04:00
+
+[Install]
+WantedBy=timers.target

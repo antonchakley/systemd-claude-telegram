@@ -1,0 +1,6 @@
+[Unit]
+Description=Restart Claude Code Telegram session
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl --user restart claude-telegram
