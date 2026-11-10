@@ -1,0 +1,6 @@
+[Unit]
+Description=Clear Claude Code Telegram session context
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/tmux -L claude send-keys -t claude-tg /clear Enter
